@@ -25,9 +25,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Nivel de Faltas"
         android:id="@+id/textView8"
+        android:layout_marginTop="38dp"
         android:layout_below="@+id/NomeMat"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="66dp" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -56,11 +56,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Quantidade de Faltas Restantes"
+        android:text="Faltas Restantes"
         android:id="@+id/textView11"
-        android:layout_marginTop="57dp"
-        android:layout_below="@+id/textView10"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/status"
+        android:layout_alignRight="@+id/textView9"
+        android:layout_alignEnd="@+id/textView9" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -68,8 +69,50 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Numero"
         android:id="@+id/RestF"
+        android:layout_marginTop="22dp"
         android:layout_below="@+id/textView11"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp" />
+        android:layout_toRightOf="@+id/textView8"
+        android:layout_toEndOf="@+id/textView8"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/status"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/textView10"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Faltas Atuais"
+        android:id="@+id/textView14"
+        android:layout_above="@+id/RestF"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Numero"
+        android:id="@+id/FaltasAt"
+        android:layout_alignBaseline="@+id/RestF"
+        android:layout_alignBottom="@+id/RestF"
+        android:layout_toLeftOf="@+id/NomeMat"
+        android:layout_toStartOf="@+id/NomeMat" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voltar"
+        android:id="@+id/voltar"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
