@@ -1,8 +1,10 @@
 package projectp3.studio.com.gerenciamentodefaltas;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,6 +33,7 @@ public class Situacao extends AppCompatActivity {
     private ArrayList<Integer> ids;
     private ArrayList<String> faltasA;
     private ArrayList<String> faltasMax;
+    private AlertDialog.Builder dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +53,31 @@ public class Situacao extends AppCompatActivity {
             listaMat.setLongClickable(true);
             listaMat.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
                 @Override
-                public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                    removerTarefa( ids.get( position ) );
+                public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
+
+                    //criar dialog
+                    dialog = new AlertDialog.Builder(Situacao.this);
+                    //titulo
+                    dialog.setTitle("Excluir matéria");
+                    //mensageem
+                    dialog.setMessage("Deseja excluir a matéria da lista?");
+
+                    dialog.setCancelable(false);
+
+                    //botao nao
+                    dialog.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {}
+                    });
+                    //botao sim
+                    dialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            removerTarefa( ids.get( position ) );
+                        }
+                    });
+                    dialog.create();
+                    dialog.show();
                     return true;
                 }
             });
