@@ -47,29 +47,20 @@ public class Situacao extends AppCompatActivity {
             banco = openOrCreateDatabase("GerencFaltas", MODE_PRIVATE, null);
             banco.execSQL("CREATE TABLE IF NOT EXISTS materias (id INTEGER PRIMARY KEY AUTOINCREMENT, nome VARCHAR, cargaHoraria INT(2), maxFaltas INT(2), faltas INT(2))");
 
-            //banco.execSQL("DELETE FROM Materias WHERE id IS NOT null");
             recuperarInfo();
 
             listaMat.setLongClickable(true);
             listaMat.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
                 @Override
                 public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
-
-                    //criar dialog
                     dialog = new AlertDialog.Builder(Situacao.this);
-                    //titulo
                     dialog.setTitle("Excluir matéria");
-                    //mensageem
                     dialog.setMessage("Deseja excluir a matéria da lista?");
-
                     dialog.setCancelable(false);
-
-                    //botao nao
                     dialog.setNegativeButton("Não", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {}
                     });
-                    //botao sim
                     dialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
@@ -86,28 +77,17 @@ public class Situacao extends AppCompatActivity {
             listaMat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-
                     ArrayList<String> extra = new ArrayList<String>();
-
                     extra.add(mat.get(position));
                     extra.add(faltasA.get(position));
                     extra.add(faltasMax.get(position));
-
-
-
-                    Log.i("AQUI - ", extra.toString());
-
                     Intent i = new Intent(Situacao.this, SituDaMat.class);
                     i.putExtra("Dados", extra);
-
-
                     startActivity(i);
                 }
             });
 
-        }catch(Exception e){
-            //Toast.makeText(Situacao.this, "deu ruim jão " + e.toString(), Toast.LENGTH_LONG).show();
-        }
+        }catch(Exception e){}
 
         //Botão Voltar
         voltar.setOnClickListener(new View.OnClickListener() {
@@ -118,7 +98,6 @@ public class Situacao extends AppCompatActivity {
         });
 
     }
-
 
     public void recuperarInfo(){
         try{
@@ -142,12 +121,9 @@ public class Situacao extends AppCompatActivity {
                 ids.add( Integer.parseInt(cursor.getString(indexId)) );
                 faltasA.add( cursor.getString(indexFaltas) );
                 faltasMax.add( cursor.getString(indexMaxF) );
-                //Log.i("AQUI - ", cursor.getString(indexNome));
                 cursor.moveToNext();
             }
-        }catch(Exception e){
-            //Toast.makeText(Situacao.this, "Exception -> " + e.toString(), Toast.LENGTH_LONG).show();
-        }
+        }catch(Exception e){}
     }
 
     public void removerTarefa(Integer id){
@@ -159,6 +135,4 @@ public class Situacao extends AppCompatActivity {
             e.printStackTrace();;
         }
     }
-
-
 }

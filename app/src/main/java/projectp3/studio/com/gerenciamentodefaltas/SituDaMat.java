@@ -30,19 +30,16 @@ public class SituDaMat extends AppCompatActivity {
         faltasRest = (TextView) findViewById(R.id.RestF);
         faltasAtuais = (TextView) findViewById(R.id.FaltasAt);
         status = (TextView) findViewById(R.id.status);
-
         voltar = (Button) findViewById(R.id.voltar);
-
         Bundle extra = getIntent().getExtras();
 
         if(extra != null){
             ArrayList<String> dados = extra.getStringArrayList("Dados");
-            //Toast.makeText(SituDaMat.this, dados.toString(), Toast.LENGTH_LONG).show();
-
             Integer faltasR = Integer.parseInt(dados.get(2)) - Integer.parseInt(dados.get(1));
-
             nomeMat.setText(dados.get(0));
             faltasAtuais.setText(dados.get(1));
+            if(faltasR < 0)
+                faltasR = 0;
             faltasRest.setText(faltasR.toString());
             status.setText(calcStatus(Integer.parseInt(dados.get(1)) , Integer.parseInt(dados.get(2))));
         }
@@ -55,7 +52,6 @@ public class SituDaMat extends AppCompatActivity {
             }
         });
 
-
     }
 
     public String calcStatus(Integer faltasA, Integer maxFaltas){
@@ -65,10 +61,12 @@ public class SituDaMat extends AppCompatActivity {
         int nvl = (int)((faltasA*100)/maxFaltas);
         if( nvl < 50 ){
             return "ACEITÁVEL";
-        }else if (nvl >= 50 && nvl < 90){
+        }else if (nvl >= 50 && nvl < 80){
             return "PERIGOSO!";
-        }else{
+        }else if (nvl >= 80 && nvl <= 100){
             return "CRÍTICO!!!";
+        }else{
+            return "LIMITE ULTRAPASSADO!";
         }
     }
 }

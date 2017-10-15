@@ -18,8 +18,6 @@ public class MainActivity extends Activity {
     private Button verF;
     private SQLiteDatabase banco;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,9 +30,6 @@ public class MainActivity extends Activity {
         banco = openOrCreateDatabase("GerencFaltas", MODE_PRIVATE, null);
 
         banco.execSQL("CREATE TABLE IF NOT EXISTS materias (id INTEGER PRIMARY KEY AUTOINCREMENT, nome VARCHAR, cargaHoraria INT(2), maxFaltas INT(2), faltas INT(2))");
-
-        //banco.execSQL("INSERT INTO materias (nome, cargaHoraria, maxFaltas, faltas) VALUES('Projeto de Software', 60, 12, 0)");
-
 
         addMat.setOnClickListener(new View.OnClickListener(){
             @Override

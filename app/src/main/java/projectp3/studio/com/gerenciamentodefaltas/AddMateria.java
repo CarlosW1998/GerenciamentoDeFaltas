@@ -26,8 +26,6 @@ public class AddMateria extends AppCompatActivity {
     private SQLiteDatabase banco;
     private Button voltar;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,14 +43,21 @@ public class AddMateria extends AppCompatActivity {
                 String m = materia.getText().toString();
                 String c = cargaH.getText().toString();
                 String n = numF.getText().toString();
+                Integer verF;
+                if(!n.equals(""))
+                    verF = Integer.parseInt(numF.getText().toString());
+                else
+                    verF = 1;
 
-                if(m.equals("") || n.equals("") || c.equals("")){
+                if(verF <= 0){
+                    Toast.makeText(AddMateria.this, "Valor de Faltas inválido", Toast.LENGTH_SHORT).show();
+                }else if(m.equals("") || n.equals("") || c.equals("")){
                     Toast.makeText(AddMateria.this, "Por favor, preencha todos os campos!", Toast.LENGTH_LONG).show();
                 }else{
                     String toAdd = "'"+m+"',"+c+","+n;
                     try {
                         banco = openOrCreateDatabase("GerencFaltas", MODE_PRIVATE, null);
-                        //banco.execSQL("CREATE TABLE IF NOT EXISTS materias (id INTEGER PRIMARY KEY AUTOINCREMENT, nome VARCHAR, cargaHoraria INT(2), maxFaltas INT(2), faltas INT(2))");
+                        banco.execSQL("CREATE TABLE IF NOT EXISTS materias (id INTEGER PRIMARY KEY AUTOINCREMENT, nome VARCHAR, cargaHoraria INT(2), maxFaltas INT(2), faltas INT(2))");
                         banco.execSQL("INSERT INTO materias (nome, cargaHoraria, maxFaltas, faltas) VALUES (" + toAdd + ",0)" );
                     }catch(Exception e){
                         Toast.makeText(AddMateria.this, "EXCEPTION " + e.toString(), Toast.LENGTH_LONG).show();
