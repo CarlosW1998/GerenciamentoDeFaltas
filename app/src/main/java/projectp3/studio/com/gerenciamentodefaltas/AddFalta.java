@@ -67,23 +67,19 @@ public class AddFalta extends AppCompatActivity {
                     dialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
+                            String prevStatus = calcStatus(Integer.parseInt(faltasA.get(position)), Integer.parseInt(faltasMax.get(position)));
                             updateFaltas(ids.get(position), faltasA.get(position));
+                            String newStatus = calcStatus(Integer.parseInt(faltasA.get(position)), Integer.parseInt(faltasMax.get(position)));
 
-                            Integer maxF = Integer.parseInt(faltasMax.get(position));
-                            Integer fA = Integer.parseInt(faltasA.get(position));
-
-                            ArrayList<String> extra = new ArrayList<String>();
-                            extra.add(mat.get(position));
-                            extra.add(faltasA.get(position));
-                            extra.add(faltasMax.get(position));
-
-                            int nvl = (int)((fA*100)/maxF);
-                            if (nvl >= 50 && nvl < 90){
-                                notificar("Perigoso", extra);
-                            }else if (nvl > 90 && nvl <= 100){
-                                notificar("CRÍTICO", extra);
-                            }else if(nvl > 100){
-                                notificar("ULTRAPASSADO", extra);
+                            if(!prevStatus.equals(newStatus)){
+                                int nvl = (int)((Integer.parseInt(faltasA.get(position))*100)/Integer.parseInt(faltasMax.get(position)));
+                                if (nvl >= 50 && nvl < 80){
+                                    notificar("Perigoso", position);
+                                }else if (nvl >= 80 && nvl <= 100){
+                                    notificar("CRÍTICO", position);
+                                }else if(nvl > 100){
+                                    notificar("ULTRAPASSADO", position);
+                                }
                             }
                         }
                     });
@@ -134,7 +130,7 @@ public class AddFalta extends AppCompatActivity {
         try{
             int f = Integer.parseInt(faltas) + 1;
             banco.execSQL("UPDATE materias SET faltas="+ f +" WHERE id=" + id);
-            Toast.makeText(AddFalta.this, "Falta adicionadas", Toast.LENGTH_LONG).show();
+            Toast.makeText(AddFalta.this, "Falta adicionada!", Toast.LENGTH_LONG).show();
             recuperarInfo();
 
         }catch(Exception e){
@@ -142,7 +138,7 @@ public class AddFalta extends AppCompatActivity {
         }
     }
 
-    public void notificar(String status, ArrayList<String> dados){
+    public void notificar(String status, int position){
 
         notification = new NotificationCompat.Builder(AddFalta.this);
         notification.setAutoCancel(true);
@@ -161,14 +157,36 @@ public class AddFalta extends AppCompatActivity {
             toque.play();
         }catch(Exception e){}
 
+        ArrayList<String> extra = new ArrayList<String>();
+        extra.add(mat.get(position));
+        extra.add(faltasA.get(position));
+        extra.add(faltasMax.get(position));
+
         Intent i = new Intent(AddFalta.this, SituDaMat.class);
-        i.putExtra("Dados", dados);
+        i.putExtra("Dados", extra);
 
         PendingIntent pi = PendingIntent.getActivity(AddFalta.this, 0, i, PendingIntent.FLAG_UPDATE_CURRENT);
         notification.setContentIntent(pi);
 
         NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         nm.notify(id, notification.build());
+    }
+
+    public String calcStatus(Integer faltasA, Integer maxFaltas){
+        //ACEITAVEL (VERDE) -> ate 50% [0, 50)
+        //PERIGOSO (AMARELO) -> entre 50% e 90% [50, 90)
+        //CRITICO (VERMELHO) -> mais de 90% [90, 100]
+        //ULTRAPASSADO (PRETO) -> mais de 100% (100, +inf)
+        int nvl = (int)((faltasA*100)/maxFaltas);
+        if( nvl < 50 ){
+            return "ACEITÁVEL";
+        }else if (nvl >= 50 && nvl < 80){
+            return "PERIGOSO!";
+        }else if (nvl >= 80 && nvl <= 100){
+            return "CRÍTICO!!!";
+        }else{
+            return "LIMITE ULTRAPASSADO!";
+        }
     }
 
 }

@@ -65,7 +65,6 @@ public class AddMateria extends AppCompatActivity {
                     }
                     Toast.makeText(AddMateria.this, "Matéria Adicionada!", Toast.LENGTH_LONG).show();
                     finish();
-
                 }
             }
         });

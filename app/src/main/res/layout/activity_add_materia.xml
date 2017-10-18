@@ -19,50 +19,14 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/nomeM"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="106dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="#ffffff"
-        android:padding="3dp" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Nome"
         android:id="@+id/textView3"
-        android:layout_alignBottom="@+id/nomeM"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="34dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Carga Horaria"
-        android:id="@+id/textView4"
-        android:layout_below="@+id/nomeM"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="43dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/cargaH"
-        android:background="#ffffff"
-        android:padding="3dp"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -70,15 +34,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Numero Maximo de Faltas"
-        android:id="@+id/textView12"
-        android:layout_below="@+id/cargaH"
+        android:text="Carga Horaria"
+        android:id="@+id/textView4"
+        android:layout_marginBottom="38dp"
+        android:layout_alignBottom="@+id/cargaH"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="48dp" />
+        android:layout_alignParentStart="true" />
 
     <EditText
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/cargaH"
+        android:background="#ffffff"
+        android:padding="3dp"
+        android:layout_below="@+id/nomeM"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="85dp" />
+
+    <TextView
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Numero Maximo de Faltas"
+        android:id="@+id/textView12"
+        android:layout_marginTop="47dp"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
@@ -87,7 +75,8 @@
         android:padding="3dp"
         android:layout_below="@+id/textView12"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -106,5 +95,16 @@
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/textView12"
         android:layout_toEndOf="@+id/textView12" />
+
+    <EditText
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/nomeM"
+        android:background="#ffffff"
+        android:padding="3dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="7dp" />
 
 </RelativeLayout>
