@@ -1,67 +1,48 @@
 package Strategy;
 
 import android.app.Activity;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
+import android.database.CursorIndexOutOfBoundsException;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
+import android.support.v7.app.NotificationCompat;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import projectp3.studio.com.gerenciamentodefaltas.AddFalta;
+import projectp3.studio.com.gerenciamentodefaltas.R;
+import projectp3.studio.com.gerenciamentodefaltas.SituDaMat;
 
 /**
  * Created by Lucas on 17/10/2017.
  */
 public class StrategyFuncs extends Activity {
 
-    private Button voltar;
-    private SQLiteDatabase banco;
-    private ArrayAdapter<String> listaMaterias;
-    private ArrayList<String> mat;
-    private ArrayList<Integer> ids;
-    private ArrayList<String> faltasA;
-    private ArrayList<String> faltasMax;
+    private Context context;
 
-
-    public StrategyFuncs(){
-        this.banco = openOrCreateDatabase("GerencFaltas", MODE_PRIVATE, null);
+    public StrategyFuncs(Context c){
+        this.context = c;
     }
 
 
-    public void recuperarInfo(ListView listaMat){
-        try{
-            Cursor cursor = banco.rawQuery("SELECT id, nome,faltas,maxFaltas  FROM materias", null);
+    public String calcStatus(Integer fA, Integer maxF){
+        //ACEITAVEL -> ate 50% [0, 50)
+        //PERIGOSO -> entre 50% e 90% [50, 90)
+        //CRITICO -> mais de 90% [90, 100]
+        //ULTRAPASSADO -> mais de 100% (100, +inf)
 
-            int indexNome = cursor.getColumnIndex("nome");
-            int indexId = cursor.getColumnIndex("id");
-            int indexFaltas = cursor.getColumnIndex("faltas");
-            int indexMaxF = cursor.getColumnIndex("maxFaltas");
-            cursor.moveToFirst();
-            //Adapter
-            mat = new ArrayList<String>();
-            ids = new ArrayList<Integer>();
-            faltasA = new ArrayList<String>();
-            faltasMax = new ArrayList<String>();
-            listaMaterias = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_2, android.R.id.text2, mat);
-            listaMat.setAdapter(listaMaterias);
-
-            while(cursor != null){
-                mat.add( cursor.getString(indexNome) );
-                ids.add( Integer.parseInt(cursor.getString(indexId)) );
-                faltasA.add( cursor.getString(indexFaltas) );
-                faltasMax.add( cursor.getString(indexMaxF) );
-                cursor.moveToNext();
-            }
-        }catch(Exception e){}
-    }
-
-
-    public String calcStatus(Integer faltasA, Integer maxFaltas){
-        //ACEITAVEL (VERDE) -> ate 50% [0, 50)
-        //PERIGOSO (AMARELO) -> entre 50% e 90% [50, 90)
-        //CRITICO (VERMELHO) -> mais de 90% [90, 100]
-        //ULTRAPASSADO (PRETO) -> mais de 100% (100, +inf)
-        int nvl = (int)((faltasA*100)/maxFaltas);
+        int nvl = (int)((fA*100)/maxF);
         if( nvl < 50 ){
             return "ACEITÁVEL";
         }else if (nvl >= 50 && nvl < 80){
@@ -73,5 +54,14 @@ public class StrategyFuncs extends Activity {
         }
     }
 
+
+    public boolean hasNext (Cursor c){
+        try{
+            c.moveToNext();
+            return true;
+        }catch (CursorIndexOutOfBoundsException e){
+            return false;
+        }
+    }
 
 }

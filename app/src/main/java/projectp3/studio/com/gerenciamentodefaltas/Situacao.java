@@ -22,18 +22,16 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import Strategy.InfosDB;
+import Strategy.StrategyFuncs;
+
 public class Situacao extends AppCompatActivity {
 
     private Button voltar;
     private ListView listaMat;
     private SQLiteDatabase banco;
-    private Cursor cursor;
-    private ArrayAdapter<String> listaMaterias;
-    private ArrayList<String> mat;
-    private ArrayList<Integer> ids;
-    private ArrayList<String> faltasA;
-    private ArrayList<String> faltasMax;
     private AlertDialog.Builder dialog;
+    private InfosDB idb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +41,13 @@ public class Situacao extends AppCompatActivity {
         voltar = (Button) findViewById(R.id.voltar);
         listaMat = (ListView) findViewById(R.id.listaM);
 
+        idb = new InfosDB(Situacao.this);
+
         try {
             banco = openOrCreateDatabase("GerencFaltas", MODE_PRIVATE, null);
             banco.execSQL("CREATE TABLE IF NOT EXISTS materias (id INTEGER PRIMARY KEY AUTOINCREMENT, nome VARCHAR, cargaHoraria INT(2), maxFaltas INT(2), faltas INT(2))");
 
-            recuperarInfo();
+            idb.recuperarInfo(banco, listaMat);
 
             listaMat.setLongClickable(true);
             listaMat.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -64,7 +64,7 @@ public class Situacao extends AppCompatActivity {
                     dialog.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            removerTarefa( ids.get( position ) );
+                            removerTarefa( idb.getIds().get( position ) );
                         }
                     });
                     dialog.create();
@@ -77,12 +77,8 @@ public class Situacao extends AppCompatActivity {
             listaMat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                    ArrayList<String> extra = new ArrayList<String>();
-                    extra.add(mat.get(position));
-                    extra.add(faltasA.get(position));
-                    extra.add(faltasMax.get(position));
                     Intent i = new Intent(Situacao.this, SituDaMat.class);
-                    i.putExtra("Dados", extra);
+                    i.putExtra("Dados", idb.getDados(position));
                     startActivity(i);
                 }
             });
@@ -99,38 +95,11 @@ public class Situacao extends AppCompatActivity {
 
     }
 
-    public void recuperarInfo(){
-        try{
-            Cursor cursor = banco.rawQuery("SELECT id, nome,faltas,maxFaltas  FROM materias", null);
-
-            int indexNome = cursor.getColumnIndex("nome");
-            int indexId = cursor.getColumnIndex("id");
-            int indexFaltas = cursor.getColumnIndex("faltas");
-            int indexMaxF = cursor.getColumnIndex("maxFaltas");
-            cursor.moveToFirst();
-            //Adapter
-            mat = new ArrayList<String>();
-            ids = new ArrayList<Integer>();
-            faltasA = new ArrayList<String>();
-            faltasMax = new ArrayList<String>();
-            listaMaterias = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_2, android.R.id.text2, mat);
-            listaMat.setAdapter(listaMaterias);
-
-            while(cursor != null){
-                mat.add( cursor.getString(indexNome) );
-                ids.add( Integer.parseInt(cursor.getString(indexId)) );
-                faltasA.add( cursor.getString(indexFaltas) );
-                faltasMax.add( cursor.getString(indexMaxF) );
-                cursor.moveToNext();
-            }
-        }catch(Exception e){}
-    }
-
     public void removerTarefa(Integer id){
         try{
             banco.execSQL("DELETE FROM materias WHERE id=" + id);
             Toast.makeText(Situacao.this, "Materia Excluida", Toast.LENGTH_LONG).show();
-            recuperarInfo();
+            idb.recuperarInfo(banco, listaMat);
         }catch(Exception e){
             e.printStackTrace();;
         }

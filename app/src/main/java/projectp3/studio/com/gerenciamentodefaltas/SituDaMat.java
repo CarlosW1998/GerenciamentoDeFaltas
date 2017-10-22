@@ -13,6 +13,9 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import Strategy.InfosDB;
+import Strategy.StrategyFuncs;
+
 public class SituDaMat extends AppCompatActivity {
 
     private TextView nomeMat;
@@ -21,10 +24,14 @@ public class SituDaMat extends AppCompatActivity {
     private TextView status;
     private Button voltar;
 
+    private StrategyFuncs s;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_situ_da_mat);
+
+        s = new StrategyFuncs(SituDaMat.this);
 
         nomeMat = (TextView) findViewById(R.id.NomeMat);
         faltasRest = (TextView) findViewById(R.id.RestF);
@@ -41,7 +48,7 @@ public class SituDaMat extends AppCompatActivity {
             if(faltasR < 0)
                 faltasR = 0;
             faltasRest.setText(faltasR.toString());
-            status.setText(calcStatus(Integer.parseInt(dados.get(1)) , Integer.parseInt(dados.get(2))));
+            status.setText(s.calcStatus(Integer.parseInt(dados.get(1)) , Integer.parseInt(dados.get(2))));
         }
 
         //Botão Voltar
@@ -52,21 +59,5 @@ public class SituDaMat extends AppCompatActivity {
             }
         });
 
-    }
-
-    public String calcStatus(Integer faltasA, Integer maxFaltas){
-        //ACEITAVEL (VERDE) -> ate 50% [0, 50)
-        //PERIGOSO (AMARELO) -> entre 50% e 90% [50, 90)
-        //CRITICO (VERMELHO) -> mais de 90% [90, 100]
-        int nvl = (int)((faltasA*100)/maxFaltas);
-        if( nvl < 50 ){
-            return "ACEITÁVEL";
-        }else if (nvl >= 50 && nvl < 80){
-            return "PERIGOSO!";
-        }else if (nvl >= 80 && nvl <= 100){
-            return "CRÍTICO!!!";
-        }else{
-            return "LIMITE ULTRAPASSADO!";
-        }
     }
 }
