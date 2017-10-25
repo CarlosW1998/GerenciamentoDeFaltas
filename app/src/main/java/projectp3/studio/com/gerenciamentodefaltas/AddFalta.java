@@ -117,7 +117,7 @@ public class AddFalta extends AppCompatActivity {
 
         notification = new NotificationCompat.Builder(AddFalta.this);
         notification.setAutoCancel(true);
-        notification.setSmallIcon(R.drawable.ic_launcher);
+        notification.setSmallIcon(R.drawable.notification_icon);
         notification.setTicker("Nível de Faltas " + status + "!");
         notification.setWhen(System.currentTimeMillis());
         notification.setContentTitle("Nível de Faltas " + status + "!");

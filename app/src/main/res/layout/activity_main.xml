@@ -19,8 +19,8 @@
         android:layout_height="wrap_content"
         android:text="Adicionar Matéria"
         android:id="@+id/addMat"
-        android:layout_marginTop="77dp"
-        android:layout_below="@+id/textView"
+        android:layout_marginTop="57dp"
+        android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -47,15 +47,6 @@
         android:layout_alignRight="@+id/addF"
         android:layout_alignEnd="@+id/addF" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Gerenciamento de Faltas"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,6 +56,14 @@
         android:layout_below="@+id/verF"
         android:layout_alignLeft="@+id/verF"
         android:layout_alignStart="@+id/verF" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:background="@drawable/logo"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
 </ScrollView>
