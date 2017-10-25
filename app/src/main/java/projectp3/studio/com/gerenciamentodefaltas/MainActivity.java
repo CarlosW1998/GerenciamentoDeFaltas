@@ -3,6 +3,7 @@ package projectp3.studio.com.gerenciamentodefaltas;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,7 @@ public class MainActivity extends Activity {
     private Button addMat;
     private Button addF;
     private Button verF;
+    private Button importar;
     private SQLiteDatabase banco;
 
     @Override
@@ -22,6 +24,7 @@ public class MainActivity extends Activity {
         addMat = (Button) findViewById(R.id.addMat);
         addF = (Button) findViewById(R.id.addF);
         verF = (Button) findViewById(R.id.verF);
+        importar = (Button) findViewById(R.id.importar);
 
         banco = openOrCreateDatabase("GerencFaltas", MODE_PRIVATE, null);
 
@@ -47,6 +50,23 @@ public class MainActivity extends Activity {
                 startActivity(new Intent(MainActivity.this, Situacao.class));
             }
         });
+
+        importar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, GetMaterias.class));
+            }
+        });
+
+        /*
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                // All your networking logic
+                // should be here
+            }
+        });
+        */
 
     }
 }

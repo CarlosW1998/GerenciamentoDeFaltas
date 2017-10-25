@@ -17,8 +17,11 @@
         </activity>
         <activity android:name=".AddMateria" />
         <activity android:name=".AddFalta" />
-        <activity android:name=".Situacao"></activity>
-        <activity android:name=".SituDaMat"></activity>
+        <activity android:name=".Situacao" />
+        <activity android:name=".SituDaMat" />
+        <activity android:name=".GetMaterias"></activity>
+        <!--<uses-permission android:name="android.permission.INTERNET" />-->
+
     </application>
 
 </manifest>

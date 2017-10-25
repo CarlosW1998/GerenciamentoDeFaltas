@@ -17,6 +17,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
+
 public class AddMateria extends AppCompatActivity {
 
     private EditText materia;
@@ -59,12 +60,13 @@ public class AddMateria extends AppCompatActivity {
                         banco = openOrCreateDatabase("GerencFaltas", MODE_PRIVATE, null);
                         banco.execSQL("CREATE TABLE IF NOT EXISTS materias (id INTEGER PRIMARY KEY AUTOINCREMENT, nome VARCHAR, cargaHoraria INT(2), maxFaltas INT(2), faltas INT(2))");
                         banco.execSQL("INSERT INTO materias (nome, cargaHoraria, maxFaltas, faltas) VALUES (" + toAdd + ",0)" );
+                        Toast.makeText(AddMateria.this, "Matéria Adicionada!", Toast.LENGTH_LONG).show();
+                        finish();
                     }catch(Exception e){
-                        Toast.makeText(AddMateria.this, "EXCEPTION " + e.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(AddMateria.this, "Erro ao adicionar", Toast.LENGTH_LONG).show();
+                        //Toast.makeText(AddMateria.this, "EXCEPTION " + e.toString(), Toast.LENGTH_LONG).show();
                         e.printStackTrace();
                     }
-                    Toast.makeText(AddMateria.this, "Matéria Adicionada!", Toast.LENGTH_LONG).show();
-                    finish();
                 }
             }
         });
