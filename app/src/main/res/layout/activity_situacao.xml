@@ -38,13 +38,22 @@
 
     <ListView
         android:layout_width="wrap_content"
-        android:layout_height="400dp"
+        android:layout_height="370dp"
         android:id="@+id/listaM"
         android:background="#fb77b2fb"
-        android:layout_marginTop="29dp"
-        android:layout_below="@+id/textView7"
+        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="(Clique e segure caso queira deletar matérias)"
+        android:id="@+id/textView"
+        android:layout_below="@+id/textView7"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="6dp" />
 
 </RelativeLayout>
 </ScrollView>

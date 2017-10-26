@@ -2,6 +2,90 @@
 <items version="2" >
 
     <item
+        jar="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="26.0.1"
+        sha1="20cd2ae23fad069f53139f6e93d6a7bde0e40d60">
+        <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\instant-run_60f1d7b7f91756f1482ec3b3d0d0f1b814fcc239.jar" />
+    </item>
+    <item
+        jar="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\exploded-aar\com.android.support\support-v4\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="true"
+        revision="26.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-26.0.0-alpha1_384af16a15d33ebc4a611fde90949250a2f611d4.jar" />
+    </item>
+    <item
+        jar="C:\Users\Lucas\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
+        jumboMode="true"
+        revision="26.0.1"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\retrofit-2.1.0_1d5b7a6e9d57b3f538dd271d41acb4aeea621c92.jar" />
+    </item>
+    <item
+        jar="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="true"
+        revision="26.0.1"
+        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
+        <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-26.0.0-alpha1_e653efd073e3c6d982c6a22f86d775654589ecdd.jar" />
+    </item>
+    <item
+        jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\26.0.0-alpha1\support-annotations-26.0.0-alpha1.jar"
+        jumboMode="true"
+        revision="26.0.1"
+        sha1="023ee503b631f69511e335a061ea008f8da60f40">
+        <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\support-annotations-26.0.0-alpha1_6b7bdd64075f27ac794055998accebfc57200291.jar" />
+    </item>
+    <item
+        jar="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="true"
+        revision="26.0.1"
+        sha1="952944218ecedea1554a513dec0c14d570642843">
+        <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-26.0.0-alpha1_3f7e2a9321543d804c41e25acb293517e04a5f61.jar" />
+    </item>
+    <item
+        jar="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="true"
+        revision="26.0.1"
+        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
+        <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-26.0.0-alpha1_09d8ab4662bdaf000fd5d632cf09db8d9c82ce22.jar" />
+    </item>
+    <item
+        jar="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="true"
+        revision="26.0.1"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-26.0.0-alpha1_a78848bbd00db980f10f294682e5225142da54d6.jar" />
+    </item>
+    <item
+        jar="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="true"
+        revision="26.0.1"
+        sha1="9935891f23923f39d002087085d9696568a9f657">
+        <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-26.0.0-alpha1_d1b48dc1e7c1dca467da71b57590e30e64332914.jar" />
+    </item>
+    <item
+        jar="C:\Users\Lucas\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.4.0\73ccf14fba19ce2190297ac801579f3a85f1c0e8\logging-interceptor-3.4.0.jar"
+        jumboMode="true"
+        revision="26.0.1"
+        sha1="73ccf14fba19ce2190297ac801579f3a85f1c0e8">
+        <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\logging-interceptor-3.4.0_26bc55b122ac401884cccf3b3ff6474ecc8448de.jar" />
+    </item>
+    <item
+        jar="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="true"
+        revision="26.0.1"
+        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
+        <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-26.0.0-alpha1_e3d869a09bda51b5277009d021020670a334ca19.jar" />
+    </item>
+    <item
+        jar="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\exploded-aar\com.android.support\support-fragment\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="true"
+        revision="26.0.1"
+        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
+        <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-26.0.0-alpha1_ab49044f954dafa5ddc54f5edf8946021fa459a8.jar" />
+    </item>
+    <item
         jar="C:\Users\Lucas\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.0-beta4\de5935a367ba5e343e9df786ac8fc0c7d52b5f0c\converter-gson-2.0.0-beta4.jar"
         jumboMode="true"
         revision="26.0.1"
@@ -16,6 +100,13 @@
         <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\gson-2.4_89db9769dc11e88dc4a654a7bcdf5d06ef3d0e35.jar" />
     </item>
     <item
+        jar="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\exploded-aar\com.android.support\support-compat\26.0.0-alpha1\jars\classes.jar"
+        jumboMode="true"
+        revision="26.0.1"
+        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
+        <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-26.0.0-alpha1_56118a5be757f0faa68b09f8f1ad51bb14a7f1c6.jar" />
+    </item>
+    <item
         jar="C:\Users\Lucas\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.4.0\76d5ab52302434606c732539314290db91ebf25\okhttp-3.4.0.jar"
         jumboMode="true"
         revision="26.0.1"
@@ -23,17 +114,10 @@
         <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\okhttp-3.4.0_68b9792c210961da051ded425a8e389cb15f0c86.jar" />
     </item>
     <item
-        jar="C:\Users\Lucas\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
-        jumboMode="true"
-        revision="26.0.1"
-        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
-        <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\retrofit-2.1.0_1d5b7a6e9d57b3f538dd271d41acb4aeea621c92.jar" />
-    </item>
-    <item
         jar="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         revision="26.0.1"
-        sha1="26565ff61234f6f479004864a0710f35ce24849e">
+        sha1="988a01e756f7f0a70239a141d8e36b86520a35e9">
         <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_6f95671b486aa37c17de425f0859d427e2274c9b.jar" />
     </item>
     <item
@@ -42,13 +126,6 @@
         revision="26.0.1"
         sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
         <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\okio-1.9.0_e2d6003bfd7b56bb2396539c988684ee57cc03f7.jar" />
-    </item>
-    <item
-        jar="C:\Users\Lucas\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.4.0\73ccf14fba19ce2190297ac801579f3a85f1c0e8\logging-interceptor-3.4.0.jar"
-        jumboMode="true"
-        revision="26.0.1"
-        sha1="73ccf14fba19ce2190297ac801579f3a85f1c0e8">
-        <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\logging-interceptor-3.4.0_26bc55b122ac401884cccf3b3ff6474ecc8448de.jar" />
     </item>
 
 </items>
