@@ -20,8 +20,11 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Adicionar Falta"
         android:id="@+id/textView5"
+        android:textSize="30dp"
+        android:textStyle="bold"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -38,9 +41,9 @@
         android:layout_height="wrap_content"
         android:text="Voltar"
         android:id="@+id/voltar"
+        android:layout_marginTop="46dp"
         android:layout_below="@+id/listaAddF"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="67dp" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"

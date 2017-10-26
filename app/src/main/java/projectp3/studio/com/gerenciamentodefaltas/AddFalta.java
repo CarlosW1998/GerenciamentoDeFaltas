@@ -1,5 +1,6 @@
 package projectp3.studio.com.gerenciamentodefaltas;
 
+import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -27,7 +28,7 @@ import java.util.ArrayList;
 import Strategy.InfosDB;
 import Strategy.StrategyFuncs;
 
-public class AddFalta extends AppCompatActivity {
+public class AddFalta extends Activity {
 
     private Button voltar;
     private ListView listaMat;
@@ -109,7 +110,7 @@ public class AddFalta extends AppCompatActivity {
             idb.recuperarInfo(banco, listaMat);
 
         }catch(Exception e){
-            e.printStackTrace();;
+            e.printStackTrace();
         }
     }
 
@@ -117,12 +118,19 @@ public class AddFalta extends AppCompatActivity {
 
         notification = new NotificationCompat.Builder(AddFalta.this);
         notification.setAutoCancel(true);
-        notification.setSmallIcon(R.drawable.notification_icon);
+
+        if(status.equals("Perigoso")){
+            notification.setSmallIcon(R.drawable.notification_perigoso);
+        }else if (status.equals("CRÍTICO")){
+            notification.setSmallIcon(R.drawable.notification_critico);
+        }else{
+            notification.setSmallIcon(R.drawable.notification_limite_ultrapassado);
+        }
+
         notification.setTicker("Nível de Faltas " + status + "!");
         notification.setWhen(System.currentTimeMillis());
         notification.setContentTitle("Nível de Faltas " + status + "!");
         notification.setContentText("Clique para ver o status da matéria");
-        //notification.setLargeIcon(BitmapFactory.decodeResource(getResources(), /*caminho da imagem*/));
         int id = (int) System.currentTimeMillis();
         notification.setVibrate(new long[] {150, 800});
 

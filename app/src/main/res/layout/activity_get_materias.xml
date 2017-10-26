@@ -42,12 +42,12 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Importar Matérias"
+        android:text="Compartilhar"
         android:id="@+id/impM"
         android:layout_marginTop="69dp"
         android:layout_below="@+id/senha"
-        android:layout_alignLeft="@+id/senha"
-        android:layout_alignStart="@+id/senha" />
+        android:layout_toLeftOf="@+id/textView16"
+        android:layout_toStartOf="@+id/textView16" />
 
     <Button
         android:layout_width="wrap_content"
@@ -55,17 +55,20 @@
         android:text="Voltar"
         android:id="@+id/voltar"
         android:layout_alignTop="@+id/impM"
-        android:layout_alignRight="@+id/textView16"
-        android:layout_alignEnd="@+id/textView16" />
+        android:layout_alignRight="@+id/textView18"
+        android:layout_alignEnd="@+id/textView18" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Confirme seu cadastro"
+        android:text="DIVULGUE O APP!"
         android:id="@+id/textView8"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:textSize="30dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -73,8 +76,8 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Usuário"
         android:id="@+id/textView9"
-        android:layout_marginTop="26dp"
-        android:layout_below="@+id/textView16"
+        android:layout_marginTop="29dp"
+        android:layout_below="@+id/textView18"
         android:layout_alignLeft="@+id/user"
         android:layout_alignStart="@+id/user" />
 
@@ -84,7 +87,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Senha"
         android:id="@+id/textView15"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="37dp"
         android:layout_below="@+id/user"
         android:layout_alignLeft="@+id/user"
         android:layout_alignStart="@+id/user" />
@@ -93,11 +96,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="(Importar matérias matriculadas pelo Sie Web)"
         android:id="@+id/textView16"
         android:layout_below="@+id/textView8"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="7dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Compartilhe em The Dank Network"
+        android:id="@+id/textView"
+        android:layout_alignTop="@+id/textView16"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="(Confime seu cadastro antes)"
+        android:id="@+id/textView18"
+        android:layout_below="@+id/textView16"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp" />
 
 </RelativeLayout>
 </ScrollView>

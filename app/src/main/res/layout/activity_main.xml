@@ -15,7 +15,7 @@
     android:background="#fb579df3">
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:text="Adicionar Matéria"
         android:id="@+id/addMat"
@@ -24,7 +24,7 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:text="Adicionar Falta"
         android:id="@+id/addF"
@@ -36,7 +36,7 @@
         android:layout_alignStart="@+id/addMat" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:text="Ver Faltas"
         android:id="@+id/verF"
@@ -48,20 +48,20 @@
         android:layout_alignEnd="@+id/addF" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:text="Importar Matérias"
-        android:id="@+id/importar"
-        android:layout_marginTop="28dp"
+        android:text="Compartilhar"
+        android:id="@+id/share"
+        android:layout_marginTop="32dp"
         android:layout_below="@+id/verF"
-        android:layout_alignLeft="@+id/verF"
-        android:layout_alignStart="@+id/verF" />
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
         android:background="@drawable/logo"
+        android:layout_marginTop="29dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 

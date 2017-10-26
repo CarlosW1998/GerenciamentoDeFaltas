@@ -13,7 +13,7 @@ public class MainActivity extends Activity {
     private Button addMat;
     private Button addF;
     private Button verF;
-    private Button importar;
+    private Button share;
     private SQLiteDatabase banco;
 
     @Override
@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
         addMat = (Button) findViewById(R.id.addMat);
         addF = (Button) findViewById(R.id.addF);
         verF = (Button) findViewById(R.id.verF);
-        importar = (Button) findViewById(R.id.importar);
+        share = (Button) findViewById(R.id.share);
 
         banco = openOrCreateDatabase("GerencFaltas", MODE_PRIVATE, null);
 
@@ -51,22 +51,12 @@ public class MainActivity extends Activity {
             }
         });
 
-        importar.setOnClickListener(new View.OnClickListener() {
+        share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, GetMaterias.class));
             }
         });
-
-        /*
-        AsyncTask.execute(new Runnable() {
-            @Override
-            public void run() {
-                // All your networking logic
-                // should be here
-            }
-        });
-        */
 
     }
 }

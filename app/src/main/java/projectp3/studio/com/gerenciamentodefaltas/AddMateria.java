@@ -1,5 +1,6 @@
 package projectp3.studio.com.gerenciamentodefaltas;
 
+import android.app.Activity;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +19,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 
-public class AddMateria extends AppCompatActivity {
+public class AddMateria extends Activity {
 
     private EditText materia;
     private EditText cargaH;

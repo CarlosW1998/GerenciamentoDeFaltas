@@ -1,5 +1,6 @@
 package projectp3.studio.com.gerenciamentodefaltas;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -25,7 +26,7 @@ import java.util.ArrayList;
 import Strategy.InfosDB;
 import Strategy.StrategyFuncs;
 
-public class Situacao extends AppCompatActivity {
+public class Situacao extends Activity {
 
     private Button voltar;
     private ListView listaMat;

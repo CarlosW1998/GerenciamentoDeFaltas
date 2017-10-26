@@ -1,5 +1,6 @@
 package projectp3.studio.com.gerenciamentodefaltas;
 
+import android.app.Activity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 import Strategy.InfosDB;
 import Strategy.StrategyFuncs;
 
-public class SituDaMat extends AppCompatActivity {
+public class SituDaMat extends Activity {
 
     private TextView nomeMat;
     private TextView faltasRest;

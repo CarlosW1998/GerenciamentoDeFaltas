@@ -1,5 +1,6 @@
 package projectp3.studio.com.gerenciamentodefaltas;
 
+import android.app.Activity;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class GetMaterias extends AppCompatActivity {
+public class GetMaterias extends Activity {
 
     private EditText user;
     private EditText password;
