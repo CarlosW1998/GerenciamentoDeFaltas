@@ -1,3 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Users\Lucas\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.0-beta4\de5935a367ba5e343e9df786ac8fc0c7d52b5f0c\converter-gson-2.0.0-beta4.jar"
+        jumboMode="true"
+        revision="26.0.1"
+        sha1="de5935a367ba5e343e9df786ac8fc0c7d52b5f0c">
+        <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\converter-gson-2.0.0-beta4_22d4b0c2dfa10985a07d9741f332cd5f9ac38948.jar" />
+    </item>
+    <item
+        jar="C:\Users\Lucas\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.4\695b63d702f505b9b916e02272e3b6381bade7f\gson-2.4.jar"
+        jumboMode="true"
+        revision="26.0.1"
+        sha1="0695b63d702f505b9b916e02272e3b6381bade7f">
+        <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\gson-2.4_89db9769dc11e88dc4a654a7bcdf5d06ef3d0e35.jar" />
+    </item>
+    <item
+        jar="C:\Users\Lucas\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.4.0\76d5ab52302434606c732539314290db91ebf25\okhttp-3.4.0.jar"
+        jumboMode="true"
+        revision="26.0.1"
+        sha1="076d5ab52302434606c732539314290db91ebf25">
+        <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\okhttp-3.4.0_68b9792c210961da051ded425a8e389cb15f0c86.jar" />
+    </item>
+    <item
+        jar="C:\Users\Lucas\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
+        jumboMode="true"
+        revision="26.0.1"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\retrofit-2.1.0_1d5b7a6e9d57b3f538dd271d41acb4aeea621c92.jar" />
+    </item>
+    <item
+        jar="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="26.0.1"
+        sha1="26565ff61234f6f479004864a0710f35ce24849e">
+        <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_6f95671b486aa37c17de425f0859d427e2274c9b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Lucas\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.9.0\f824591a0016efbaeddb8300bee54832a1398cfa\okio-1.9.0.jar"
+        jumboMode="true"
+        revision="26.0.1"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\okio-1.9.0_e2d6003bfd7b56bb2396539c988684ee57cc03f7.jar" />
+    </item>
+    <item
+        jar="C:\Users\Lucas\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.4.0\73ccf14fba19ce2190297ac801579f3a85f1c0e8\logging-interceptor-3.4.0.jar"
+        jumboMode="true"
+        revision="26.0.1"
+        sha1="73ccf14fba19ce2190297ac801579f3a85f1c0e8">
+        <dex dex="C:\Android\GerenciamentoDeFaltas\app\build\intermediates\pre-dexed\debug\logging-interceptor-3.4.0_26bc55b122ac401884cccf3b3ff6474ecc8448de.jar" />
+    </item>
+
+</items>

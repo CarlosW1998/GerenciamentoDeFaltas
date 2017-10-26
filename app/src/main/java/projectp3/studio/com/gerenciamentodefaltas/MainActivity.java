@@ -3,10 +3,14 @@ package projectp3.studio.com.gerenciamentodefaltas;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 
 public class MainActivity extends Activity {
 
@@ -53,8 +57,16 @@ public class MainActivity extends Activity {
 
         share.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, GetMaterias.class));
+            public void onClick(View v) {
+                String post = "Estou usando o Gerenciador de Faltas! Confira na seção apps";
+                String encoded = "";
+                try {
+                    encoded= URLEncoder.encode(post, "utf-8");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://the-dank-network.herokuapp.com/post?content=" + encoded)));
+
             }
         });
 
