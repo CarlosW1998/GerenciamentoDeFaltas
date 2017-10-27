@@ -77,12 +77,14 @@ public class MainActivity extends Activity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String encoded = "";
+                        String imgURL =  "";
                         try {
-                            encoded= URLEncoder.encode("Estou usando o Gerenciador de Faltas! Confira na seção apps", "utf-8");
-                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://the-dank-network.herokuapp.com/post?content=" + encoded)));
+                            encoded= URLEncoder.encode("Estou usando o Gerenciador de Faltas! Confira na seção apps", "utf-8").replace("+", "%20");
+                            imgURL = URLEncoder.encode("https://orig00.deviantart.net/107e/f/2017/299/8/2/gerenciadordefaltaslogo_by_lucsales-dbrtnz5.png", "utf-8");
+                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://the-dank-network.herokuapp.com/post?content=" + encoded+
+                            "&imageUrl="+imgURL)));
                         } catch (UnsupportedEncodingException e) {
                             e.printStackTrace();
-                            Toast.makeText(MainActivity.this, "ERRO!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
